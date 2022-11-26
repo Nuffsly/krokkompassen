@@ -1,0 +1,27 @@
+$bgColor: rgba(0, 0, 0, 0);
+$borderColor: rgba(23, 40, 88, 0.4);
+
+.question-node{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background-color: $bgColor;
+}
+
+.question-text{
+    display: block;
+    width: 50vw;
+    height: auto;
+    padding: 10px;
+    
+    background-color: $bgColor;
+
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 18px;
+    border-color: $borderColor;
+
+    font-size: 2.5em;
+    font-family: "Roboto";
+    text-align: center;
+}
