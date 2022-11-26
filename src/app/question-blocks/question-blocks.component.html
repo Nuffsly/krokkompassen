@@ -1,6 +1,6 @@
 <div class="question-node">
     <p class="question-text">{{qText}}</p>
-    <div class="answer-region" *ngFor="let answer of answers">
-        <button class="answer-button">{{answer.answerBody}}</button>
+    <div class="answer-region">
+        <button class="answer-button" *ngFor="let answer of answers" (click)="displayQuestion(answer.leadsTo)">{{answer.answerBody}}</button>
     </div>
 </div>

@@ -10,6 +10,15 @@
 
   {
     "id": 2,
+    "questionBody": "Är du glad?",
+    "answers": [
+      { "answerBody": "Ja", "leadsTo": 999 },
+      { "answerBody": "Nej", "leadsTo": 3 }
+    ]
+  },
+
+  {
+    "id": 3,
     "questionBody": "Ta en klunk!",
     "answers": [{ "answerBody": "Tack!", "leadsTo": 1 }]
   }
