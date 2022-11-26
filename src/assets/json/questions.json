@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "questionBody": "Har du druckit den senaste minuten?",
+    "answers": [
+      { "answerBody": "Ja", "leadsTo": 2 },
+      { "answerBody": "Nej", "leadsTo": 3 }
+    ]
+  },
+
+  {
+    "id": 2,
+    "questionBody": "Ta en klunk!",
+    "answers": [{ "answerBody": "Tack!", "leadsTo": 1 }]
+  }
+]

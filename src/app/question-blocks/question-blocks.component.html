@@ -1,8 +1,6 @@
 <div class="question-node">
-    <p class="question-text">This is an example question.<br> Does it look good?</p>
-    <div class="answer-region">
-        <button class="answer-button">Yes</button>
-        <button class="answer-button">Kinda</button>
-        <button class="answer-button">No</button>
+    <p class="question-text">{{qText}}</p>
+    <div class="answer-region" *ngFor="let answer of answers">
+        <button class="answer-button">{{answer.answerBody}}</button>
     </div>
 </div>
