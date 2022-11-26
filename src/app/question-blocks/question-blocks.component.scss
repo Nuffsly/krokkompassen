@@ -1,27 +1,67 @@
-$bgColor: rgba(0, 0, 0, 0);
-$borderColor: rgba(23, 40, 88, 0.4);
+$bgColor: rgb(38, 8, 41);
+$borderColor: rgb(255, 255, 255);
+$buttonBgColor: rgb(161, 26, 143);
+$textColor: rgb(255, 255, 255);
 
-.question-node{
-    display: inline-block;
-    width: auto;
-    height: auto;
-    background-color: $bgColor;
+.question-node {
+  display: inline-block;
+  width: auto;
+  height: auto;
 }
 
-.question-text{
-    display: block;
-    width: 50vw;
-    height: auto;
-    padding: 10px;
-    
-    background-color: $bgColor;
+.question-text {
+  display: block;
+  width: auto;
+  height: auto;
+  padding: 20px;
 
+  background-color: $bgColor;
+
+  border-radius: 18px;
+
+  font-size: 2.5em;
+  font-family: "Roboto";
+  text-align: center;
+  color: $textColor;
+}
+
+.answer-region {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  column-gap: 10px;
+
+  margin-top: 30px;
+}
+
+.answer-button {
+  display: inline;
+  width: auto;
+  height: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  background-color: $buttonBgColor;
+
+  border-radius: 18px;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 2px;
+
+  font-size: 2.5em;
+  font-family: "Roboto";
+  text-align: center;
+  color: $textColor;
+
+  &:hover{
+    background-color: darken($color: $buttonBgColor, $amount: 10);
+  }
+
+  &:focus{
     border-style: solid;
-    border-width: 3px;
-    border-radius: 18px;
     border-color: $borderColor;
-
-    font-size: 2.5em;
-    font-family: "Roboto";
-    text-align: center;
+  }
 }
