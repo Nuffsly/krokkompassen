@@ -2,6 +2,7 @@ import { ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import questionData from '../../assets/json/questions.json'
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout'
 
 @Component({
   selector: 'app-question-blocks',
@@ -14,9 +15,23 @@ export class QuestionBlocksComponent implements OnInit {
   qText: string = "";
   answers: Answer[] = new Array<Answer>();
 
-  ngOnInit(): void {
-    this.questions = deserializeQuestions(questionData);
+  isPhonePortrait: boolean = false;
 
+  constructor(private bpObserver:BreakpointObserver){}
+
+  ngOnInit(): void {
+    // Subscribe to neccesary breakpoint observer events
+    this.bpObserver.observe(Breakpoints.HandsetPortrait)
+      .subscribe(result => {
+        this.isPhonePortrait = false;
+
+        if(result.matches) {
+          this.isPhonePortrait = true;
+        }
+      })
+
+    // Initialize questions
+    this.questions = deserializeQuestions(questionData);
     this.displayQuestion(1);
   }
 

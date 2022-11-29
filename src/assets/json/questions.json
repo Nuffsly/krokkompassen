@@ -3,7 +3,7 @@
     "id": 1,
     "questionBody": "Har du druckit den senaste minuten?",
     "answers": [
-      { "answerBody": "Ja", "leadsTo": 2 },
+      { "answerBody": "Ja", "leadsTo": 4 },
       { "answerBody": "Nej", "leadsTo": 3 }
     ]
   },
@@ -20,6 +20,15 @@
   {
     "id": 3,
     "questionBody": "Ta en klunk!",
-    "answers": [{ "answerBody": "Tack!", "leadsTo": 1 }]
+    "answers": [{ "answerBody": "Tack!", "leadsTo": 4 }]
+  },
+
+  {
+    "id": 4,
+    "questionBody": "Vill du göra det igen?",
+    "answers": [
+      { "answerBody": "Ja", "leadsTo": 3 },
+      { "answerBody": "Nej", "leadsTo": 2 }
+    ]
   }
 ]

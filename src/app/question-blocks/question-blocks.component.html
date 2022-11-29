@@ -1,4 +1,4 @@
-<div class="question-node">
+<div class="question-node" [ngClass]="{'is-phone-portrait': isPhonePortrait}">
     <p class="question-text">{{qText}}</p>
     <div class="answer-region">
         <button class="answer-button" *ngFor="let answer of answers" (click)="displayQuestion(answer.leadsTo)">{{answer.answerBody}}</button>
