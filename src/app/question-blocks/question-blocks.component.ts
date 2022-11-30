@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import questionData from '../../assets/json/questions.json'
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout'
 
 @Component({
   selector: 'app-question-blocks',
@@ -9,28 +8,17 @@ import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout'
 })
 
 export class QuestionBlocksComponent implements OnInit {
+  @Input() isPhonePortrait: boolean = false;
+
   questions!: Question[];
   qText: string = "";
   answers: Answer[] = new Array<Answer>();
 
-  isPhonePortrait: boolean = false;
-
-  constructor(private bpObserver:BreakpointObserver){}
-
   ngOnInit(): void {
-    // Subscribe to neccesary breakpoint observer events
-    this.bpObserver.observe(Breakpoints.HandsetPortrait)
-      .subscribe(result => {
-        this.isPhonePortrait = false;
-
-        if(result.matches) {
-          this.isPhonePortrait = true;
-        }
-      })
-
     // Initialize questions
     this.questions = deserializeQuestions(questionData);
     this.displayQuestion(1);
+    console.log(this.isPhonePortrait)
   }
 
   displayQuestion(id: number) {

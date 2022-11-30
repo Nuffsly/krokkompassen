@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { AppComponent } from '../app.component';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-start-node',
@@ -8,7 +7,8 @@ import { AppComponent } from '../app.component';
 })
 export class StartNodeComponent {
   @Output("switchComponent") switchComponent: EventEmitter<string> = new EventEmitter();
-  
+  @Input() isPhonePortrait: boolean = false;
+
   switchToQuestionComponent(): void{
     this.switchComponent.emit("questions");
   }

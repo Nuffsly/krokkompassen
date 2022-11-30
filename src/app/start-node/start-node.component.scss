@@ -21,6 +21,10 @@ h1 {
   font-weight: bold;
 
   margin-bottom: 50px;
+
+  &.is-phone-portrait{
+    font-size: 13vw;
+  }
 }
 
 .answer-button {
@@ -53,5 +57,9 @@ h1 {
   &:focus {
     border-style: solid;
     border-color: $borderColor;
+  }
+
+  &.is-phone-portrait {
+    font-size: 8vw;
   }
 }
