@@ -82,3 +82,51 @@ $textColor: rgb(255, 255, 255);
     font-size: 8vw;
   }
 }
+
+.back-button{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  transform: translate(25%, -25%);
+
+  display: inline;
+  width: auto;
+  height: 5.5vw;
+  padding-left: 1.5vw;
+  padding-right: 1.5vw;
+  padding-top: -1.5vw;
+  padding-bottom: -1.5vw;
+
+  background-color: $buttonBgColor;
+
+  border-radius: 18px;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 2px;
+
+  color: $textColor;
+
+  &:hover{
+    background-color: darken($color: $buttonBgColor, $amount: 10);
+  }
+
+  &:focus{
+    border-style: solid;
+    border-color: $borderColor;
+  }
+
+  &.is-phone-portrait {
+    height: 11vw;
+  }
+
+  .back-icon{
+    width: 5vw;
+    // Filter trick to make the arrow white.
+    filter: invert(97%) sepia(80%) saturate(0%) hue-rotate(19deg) brightness(113%) contrast(101%);
+    
+    &.is-phone-portrait {
+      width: 10vw;
+    }
+  }
+}

@@ -13,6 +13,7 @@ export class QuestionBlocksComponent implements OnInit {
   questions!: Question[];
   qText: string = "";
   answers: Answer[] = new Array<Answer>();
+  history: number[] = new Array<number>();
 
   ngOnInit(): void {
     // Initialize questions
