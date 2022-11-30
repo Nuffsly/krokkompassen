@@ -1,3 +1,4 @@
-<body>
-  <app-question-blocks></app-question-blocks>
+<body [ngSwitch]="activeComponent">
+  <app-start-node *ngSwitchCase="'start-node'" (switchComponent)="switchComponent($event)"></app-start-node>
+  <app-question-blocks *ngSwitchCase="'questions'"></app-question-blocks>
 </body>

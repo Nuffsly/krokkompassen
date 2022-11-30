@@ -1,5 +1,3 @@
-import { ViewChild } from '@angular/core';
-import { ElementRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import questionData from '../../assets/json/questions.json'
 import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout'

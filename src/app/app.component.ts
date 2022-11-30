@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'krökkompassen';
+  activeComponent: string = 'start-node';
+
+  switchComponent(name: string):void{
+    this.activeComponent = name;
+  }
 }
