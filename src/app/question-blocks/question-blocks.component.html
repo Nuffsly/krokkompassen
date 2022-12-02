@@ -1,9 +1,9 @@
 <div class="question-node" [ngClass]="{'is-phone-portrait': isPhonePortrait}">
     <p class="question-text" [ngClass]="{'is-phone-portrait': isPhonePortrait}">{{qText}}</p>
     <div class="answer-region">
-        <button class="answer-button" [ngClass]="{'is-phone-portrait': isPhonePortrait}" *ngFor="let answer of answers" (click)="displayQuestion(answer.leadsTo)">{{answer.answerBody}}</button>
+        <button class="answer-button" [ngClass]="{'is-phone-portrait': isPhonePortrait}" *ngFor="let answer of answers" (click)="goToQuestion(answer.leadsTo)">{{answer.answerBody}}</button>
     </div>
 </div>
-<button class="back-button" [ngClass]="{'is-phone-portrait': isPhonePortrait}">
+<button class="back-button" (click)="stepBack()" *ngIf="backAvailable()" [ngClass]="{'is-phone-portrait': isPhonePortrait}">
     <img class="back-icon" [ngClass]="{'is-phone-portrait': isPhonePortrait}" src="../../assets/icons/arrow-back.svg" alt="Return to previous question"/>
 </button>
