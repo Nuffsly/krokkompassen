@@ -1,9 +1,25 @@
-<div class="question-node" [ngClass]="{'is-phone-portrait': isPhonePortrait}">
+<!-- Only one of question- or end-node is visible at any one time. -->
+<!-- Structure for question node. Values get filled depending on current question -->
+<div class="question-node" [ngClass]="{'is-phone-portrait': isPhonePortrait}" *ngIf="!isEndNode">
     <p class="question-text" [ngClass]="{'is-phone-portrait': isPhonePortrait}">{{qText}}</p>
     <div class="answer-region">
         <button class="answer-button" [ngClass]="{'is-phone-portrait': isPhonePortrait}" *ngFor="let answer of answers" (click)="goToQuestion(answer.leadsTo)">{{answer.answerBody}}</button>
     </div>
 </div>
+
+<!-- Structure for end node. Values get filled depending on current end node. Has static restart button. Has rules button if rules are available. -->
+<div class="question-node" [ngClass]="{'is-phone-portrait': isPhonePortrait}" *ngIf="isEndNode">
+    <p class="question-text" [ngClass]="{'is-phone-portrait': isPhonePortrait}">{{qText}}</p>
+    <div class="answer-region">
+        <button class="answer-button" [ngClass]="{'is-phone-portrait': isPhonePortrait}" (click)="restart()">Börja om</button>
+        <button class="answer-button" [ngClass]="{'is-phone-portrait': isPhonePortrait}" *ngIf="hasRules()" (click)="displayRules()">Regler</button>
+    </div>
+</div>
+
+<!-- Back button. Only visible when there is something to go back to. -->
 <button class="back-button" (click)="stepBack()" *ngIf="backAvailable()" [ngClass]="{'is-phone-portrait': isPhonePortrait}">
     <img class="back-icon" [ngClass]="{'is-phone-portrait': isPhonePortrait}" src="../../assets/icons/arrow-back.svg" alt="Return to previous question"/>
 </button>
+
+<!-- Insertion point for rules component, should it be loaded. -->
+<template #rulesHost></template>

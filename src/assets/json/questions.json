@@ -12,7 +12,7 @@
     "id": 2,
     "questionBody": "Är du glad?",
     "answers": [
-      { "answerBody": "Ja", "leadsTo": 999 },
+      { "answerBody": "Ja", "leadsTo": 5 },
       { "answerBody": "Nej", "leadsTo": 3 }
     ]
   },
@@ -30,5 +30,29 @@
       { "answerBody": "Ja", "leadsTo": 3 },
       { "answerBody": "Nej", "leadsTo": 2 }
     ]
+  },
+
+  {
+    "id": 5,
+    "questionBody": "Känner du för att sitta eller stå?",
+    "answers": [
+      { "answerBody": "Sitta", "leadsTo": 1001 },
+      { "answerBody": "Stå", "leadsTo": 1002 }
+    ]
+  },
+
+  {
+    "id": 1001,
+    "questionBody": "Spela Ring of Fire",
+    "answers": [
+      { "answerBody": "Ring of Fire", "leadsTo": 0 },
+      { "answerBody": "För att spela ring of fire krävs det: \nEn kortlek (inget krav på komplett) \nEtt glas alt. flaska eller burk", "leadsTo": 0 }
+    ]
+  },
+
+  {
+    "id": 1002,
+    "questionBody": "Gå hem!",
+    "answers": []
   }
 ]

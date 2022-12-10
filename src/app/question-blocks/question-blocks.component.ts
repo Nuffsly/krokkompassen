@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import questionData from '../../assets/json/questions.json';
+import { RulesComponent } from './rules/rules.component';
 
 @Component({
   selector: 'app-question-blocks',
@@ -13,7 +14,13 @@ export class QuestionBlocksComponent implements OnInit {
   qText: string = '';
   answers: Answer[] = new Array<Answer>();
   history: number[] = new Array<number>();
+  isEndNode: boolean = false;
   backAvailable = ():boolean => {return (this.history.length > 1);};
+  hasRules = ():boolean => { return this.answers.length > 0 };
+
+  ENDNODECUTOFF = 1000;
+
+  @ViewChild('rulesHost', {read: ViewContainerRef}) rulesHost!: ViewContainerRef
 
   ngOnInit(): void {
     // Initialize questions
@@ -21,22 +28,41 @@ export class QuestionBlocksComponent implements OnInit {
     this.goToQuestion(1);
   }
 
-  displayQuestion(id: number) {
+  displayQuestion(id: number): void {
     let question: Question | undefined = this.questions.find((e) => {
       return e.id === id;
     });
     if (question !== undefined) {
+      this.isEndNode = false;
       this.qText = question.questionBody;
       this.answers = question.answers;
     }
   }
 
-  goToQuestion(id: number) {
-    this.history.push(id);
-    this.displayQuestion(id);
+  displayEndNode(id: number): void {
+    let endNode: Question | undefined = this.questions.find((e) => {
+      return e.id === id;
+    });
+    if (endNode !== undefined) {
+      this.isEndNode = true;
+      this.qText = endNode.questionBody;
+      this.answers = endNode.answers
+    }
   }
 
-  stepBack() {
+  displayRules():void {
+    const rules = this.rulesHost.createComponent<RulesComponent>(RulesComponent);
+    rules.instance._title = this.answers[0].answerBody;
+    rules.instance._body = this.answers[1].answerBody;
+  }
+
+  goToQuestion(id: number): void {
+    this.history.push(id);
+    if (id > this.ENDNODECUTOFF) { this.displayEndNode(id); }
+    else { this.displayQuestion(id); }
+  }
+
+  stepBack(): void {
     if (this.history.length > 1) {
       this.history.pop();
       let id = this.history[this.history.length - 1];
@@ -44,6 +70,11 @@ export class QuestionBlocksComponent implements OnInit {
         this.displayQuestion(id);
       }
     }
+  }
+
+  restart(): void {
+    this.history = [];
+    this.goToQuestion(1);
   }
 }
 
