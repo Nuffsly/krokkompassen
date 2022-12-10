@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-rules',
@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class RulesComponent {
   @Input() _title: string = "";
   @Input() _body: string = "";
+  @Output() closeWindow: EventEmitter<void> = new EventEmitter();
 }

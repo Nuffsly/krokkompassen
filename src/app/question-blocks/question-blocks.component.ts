@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import questionData from '../../assets/json/questions.json';
 import { RulesComponent } from './rules/rules.component';
 
@@ -50,10 +50,15 @@ export class QuestionBlocksComponent implements OnInit {
     }
   }
 
-  displayRules():void {
+  displayRules(): void {
     const rules = this.rulesHost.createComponent<RulesComponent>(RulesComponent);
     rules.instance._title = this.answers[0].answerBody;
     rules.instance._body = this.answers[1].answerBody;
+    rules.instance.closeWindow = new EventEmitter();
+  }
+
+  closeRules(): void {
+    this.rulesHost.clear();
   }
 
   goToQuestion(id: number): void {

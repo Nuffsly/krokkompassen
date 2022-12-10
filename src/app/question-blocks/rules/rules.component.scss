@@ -2,3 +2,43 @@ p {
     font-size: 2em;
     color: white;
 }
+
+$bgColor: rgb(38, 8, 41);
+$borderColor: rgb(255, 255, 255);
+$buttonBgColor: rgb(161, 26, 143);
+$textColor: rgb(255, 255, 255);
+
+.answer-button {
+    display: inline;
+    width: auto;
+    height: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  
+    background-color: $buttonBgColor;
+  
+    border-radius: 18px;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 2px;
+  
+    font-size: 4vw;
+    font-family: "Roboto";
+    text-align: center;
+    color: $textColor;
+  
+    &:hover{
+      background-color: darken($color: $buttonBgColor, $amount: 10);
+    }
+  
+    &:focus{
+      border-style: solid;
+      border-color: $borderColor;
+    }
+  
+    &.is-phone-portrait {
+      font-size: 8vw;
+    }
+  }
