@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'app-rules',
@@ -9,5 +9,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class RulesComponent {
   @Input() _title: string = "";
   @Input() _body: string = "";
-  @Output() closeWindow: EventEmitter<void> = new EventEmitter();
+  @Input() _ViewContainerRef: ViewContainerRef | undefined = undefined;
+  @Output() closeWindow: EventEmitter<ViewContainerRef> = new EventEmitter();
+
+  close(): void {
+    this.closeWindow.emit(this._ViewContainerRef);
+  }
 }

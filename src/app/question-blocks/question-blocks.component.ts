@@ -51,14 +51,16 @@ export class QuestionBlocksComponent implements OnInit {
   }
 
   displayRules(): void {
+    if (this.rulesHost.length > 0) { return; }
     const rules = this.rulesHost.createComponent<RulesComponent>(RulesComponent);
     rules.instance._title = this.answers[0].answerBody;
     rules.instance._body = this.answers[1].answerBody;
-    rules.instance.closeWindow = new EventEmitter();
+    rules.instance._ViewContainerRef = this.rulesHost;
+    rules.instance.closeWindow.subscribe(this.closeRules);
   }
 
-  closeRules(): void {
-    this.rulesHost.clear();
+  closeRules(containerRef: ViewContainerRef): void {
+    containerRef.clear();
   }
 
   goToQuestion(id: number): void {
