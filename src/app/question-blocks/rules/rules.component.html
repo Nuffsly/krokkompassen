@@ -1,4 +1,7 @@
-<p>{{_title}}</p>
-<p>{{_body}}</p>
-
-<button class="answer-button" (click)="close()">Stäng</button>
+<div id="rules-container">    
+    <p id="rules-title">{{_title}}</p>
+    <p id="rules-body">{{_body}}</p>
+    <button class="close-button" (click)="close()">
+        <img src="../../../assets/icons/x-icon.svg" class="close-icon" alt="close dialogue."/>
+    </button>
+</div>

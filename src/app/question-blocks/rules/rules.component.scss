@@ -1,44 +1,75 @@
-p {
-    font-size: 2em;
-    color: white;
-}
-
 $bgColor: rgb(38, 8, 41);
 $borderColor: rgb(255, 255, 255);
 $buttonBgColor: rgb(161, 26, 143);
 $textColor: rgb(255, 255, 255);
 
-.answer-button {
-    display: inline;
-    width: auto;
-    height: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  
-    background-color: $buttonBgColor;
-  
-    border-radius: 18px;
+#rules-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 2;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 95vw;
+  height: 95vh;
+  background-color: $bgColor;
+  border-radius: 3vw;
+
+  padding: 3vw;
+}
+
+#rules-title {
+  font-size: 5vw;
+  color: $textColor;
+  text-decoration: underline;
+}
+
+#rules-body {
+  font-size: 3vw;
+  color: $textColor;
+}
+
+.close-button {
+  display: inline;
+  width: auto;
+  height: auto;
+  padding: 0;
+
+  background-color: $buttonBgColor;
+
+  border-radius: 18px;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 2px;
+
+  color: $textColor;
+
+  &:hover {
+    background-color: darken($color: $buttonBgColor, $amount: 10);
+  }
+
+  &:focus {
     border-style: solid;
-    border-color: transparent;
-    border-width: 2px;
-  
-    font-size: 4vw;
-    font-family: "Roboto";
-    text-align: center;
-    color: $textColor;
-  
-    &:hover{
-      background-color: darken($color: $buttonBgColor, $amount: 10);
-    }
-  
-    &:focus{
-      border-style: solid;
-      border-color: $borderColor;
-    }
-  
+    border-color: $borderColor;
+  }
+
+  &.is-phone-portrait {
+    height: 11vw;
+  }
+
+  .close-icon {
+    width: 5vw;
+    // Filter trick to make the arrow white.
+    filter: invert(97%) sepia(80%) saturate(0%) hue-rotate(19deg)
+      brightness(113%) contrast(101%);
+
     &.is-phone-portrait {
-      font-size: 8vw;
+      width: 10vw;
     }
   }
+}
