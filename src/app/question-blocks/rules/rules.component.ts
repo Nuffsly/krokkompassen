@@ -10,6 +10,7 @@ export class RulesComponent {
   @Input() _title: string = "";
   @Input() _body: string = "";
   @Input() _ViewContainerRef: ViewContainerRef | undefined = undefined;
+  @Input() _isPhonePortrait: boolean = false;
   @Output() closeWindow: EventEmitter<ViewContainerRef> = new EventEmitter();
 
   close(): void {

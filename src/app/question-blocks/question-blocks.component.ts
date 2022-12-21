@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import questionData from '../../assets/json/questions.json';
 import { RulesComponent } from './rules/rules.component';
 
@@ -10,12 +10,13 @@ import { RulesComponent } from './rules/rules.component';
 export class QuestionBlocksComponent implements OnInit {
   @Input() isPhonePortrait: boolean = false;
 
+  private blockBack: boolean = false;
   questions!: Question[];
   qText: string = '';
   answers: Answer[] = new Array<Answer>();
   history: number[] = new Array<number>();
   isEndNode: boolean = false;
-  backAvailable = ():boolean => {return (this.history.length > 1);};
+  backAvailable = ():boolean => {return (this.history.length > 1) && !this.blockBack;};
   hasRules = ():boolean => { return this.answers.length > 0 };
 
   ENDNODECUTOFF = 1000;
@@ -56,11 +57,14 @@ export class QuestionBlocksComponent implements OnInit {
     rules.instance._title = this.answers[0].answerBody;
     rules.instance._body = this.answers[1].answerBody;
     rules.instance._ViewContainerRef = this.rulesHost;
+    rules.instance._isPhonePortrait = this.isPhonePortrait;
     rules.instance.closeWindow.subscribe(this.closeRules);
+    this.blockBack = true;
   }
 
   closeRules(containerRef: ViewContainerRef): void {
     containerRef.clear();
+    this.blockBack = false;
   }
 
   goToQuestion(id: number): void {

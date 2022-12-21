@@ -21,24 +21,49 @@ $textColor: rgb(255, 255, 255);
   border-radius: 3vw;
 
   padding: 3vw;
+  padding-top: 2vw;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &.is-phone-portrait {
+    width: 95vw;
+    height: 90vh;
+  }
 }
 
 #rules-title {
   font-size: 5vw;
   color: $textColor;
   text-decoration: underline;
+  margin-bottom: 1vw;
+
+  &.is-phone-portrait {
+    font-size: 9vw;
+    margin-bottom: 2vw;
+  }
 }
 
 #rules-body {
   font-size: 3vw;
   color: $textColor;
+
+  &.is-phone-portrait {
+    font-size: 6vw;
+  }
 }
 
 .close-button {
-  display: inline;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  transform: translate(-25%, 25%);
+
+  display: flex;
   width: auto;
   height: auto;
-  padding: 0;
+  padding: 0.5vw;
 
   background-color: $buttonBgColor;
 
@@ -49,6 +74,9 @@ $textColor: rgb(255, 255, 255);
 
   color: $textColor;
 
+  align-items: center;
+  flex-direction: column;
+
   &:hover {
     background-color: darken($color: $buttonBgColor, $amount: 10);
   }
@@ -58,10 +86,6 @@ $textColor: rgb(255, 255, 255);
     border-color: $borderColor;
   }
 
-  &.is-phone-portrait {
-    height: 11vw;
-  }
-
   .close-icon {
     width: 5vw;
     // Filter trick to make the arrow white.
@@ -69,7 +93,29 @@ $textColor: rgb(255, 255, 255);
       brightness(113%) contrast(101%);
 
     &.is-phone-portrait {
-      width: 10vw;
+      width: 9vw;
     }
   }
+}
+
+/* Custom Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $buttonBgColor;
+  border-radius: 0.25vw;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: darken($color: $buttonBgColor, $amount: 10);
 }
