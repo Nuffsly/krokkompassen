@@ -1,6 +1,6 @@
 <div id="rules-container" [ngClass]="{'is-phone-portrait': _isPhonePortrait}">    
     <p id="rules-title" [ngClass]="{'is-phone-portrait': _isPhonePortrait}">{{_title}}</p>
-    <p id="rules-body" [ngClass]="{'is-phone-portrait': _isPhonePortrait}">{{_body}}</p>
+    <p id="rules-body" [ngClass]="{'is-phone-portrait': _isPhonePortrait}" [innerHTML]="_body" name=""></p>
     <button class="close-button" (click)="close()">
         <img src="../../../assets/icons/x-icon.svg" class="close-icon" alt="close dialogue." [ngClass]="{'is-phone-portrait': _isPhonePortrait}"/>
     </button>

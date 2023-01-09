@@ -51,8 +51,14 @@ $textColor: rgb(255, 255, 255);
   &.is-phone-portrait {
     font-size: 6vw;
   }
+
 }
 
+:host ::ng-deep ul{
+  list-style: disc;
+  margin-left: 3vw;
+  padding-top: 1vw;
+}
 .close-button {
   position: absolute;
   right: 0;
