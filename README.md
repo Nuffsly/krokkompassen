@@ -1,4 +1,17 @@
-# Krokkompassen
+# Krökkompassen
+
+Krökkompassen is a website with the purpose of providing an easy way to decide your method of kröking.
+
+>**kröka** verb *krökat* pres. *krökar*
+>* Shall we kröka?; Me and my friends have krökat all day.  
+>*To kröka is to partake in alchohol consumption with the purpose of having a good time among friends, often by playing drinking games.*
+
+In reality it is a way to present flowchart-esque questions from a json file in a simple angular web-app.
+## It is hosted right here: *Not yet*
+
+If you want to copy this, change it and then host it go ahead. Just don't monetize it you scrooge.
+
+## Angular auto generated instructions
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
 
