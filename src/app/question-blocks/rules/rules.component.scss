@@ -59,6 +59,17 @@ $textColor: rgb(255, 255, 255);
   margin-left: 3vw;
   padding-top: 1vw;
 }
+
+:host ::ng-deep ol{
+  list-style: decimal;
+  margin-left: 3vw;
+  padding-top: 1vw;
+
+  li{
+    margin-bottom: 1vw;
+  }
+}
+
 .close-button {
   position: absolute;
   right: 0;

@@ -23,14 +23,24 @@ export class RulesComponent implements OnInit{
 }
 
 function formatBody(text: string): string {
+  const orderedPattern: RegExp = /\^ (.+?) \^\^/g;
   const bulletPattern: RegExp = /\* (.+?) \*\*/g;
 
   text = text.replaceAll('\n', '<br>');
+  text = text.replaceAll(orderedPattern, orderedReplace);
   text = text.replaceAll(bulletPattern, bulletReplace);
   return text;
 }
 
 function bulletReplace(match: string, content: string): string {
-  let result = "<ul><li>"+content+"</li></ul>"
-  return result
+  return "<ul><li>"+content+"</li></ul>"
+}
+
+function orderedReplace(match: string, content: string): string {
+  const itemPattern: RegExp = /\* (.+?) \*\*/g;
+  return "<ol>" + content.replaceAll(itemPattern, itemReplace) + "</ol>"
+}
+
+function itemReplace(match: string, content: string): string {
+  return "<li>"+content+"</li>"
 }
