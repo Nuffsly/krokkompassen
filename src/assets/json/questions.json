@@ -36,8 +36,79 @@
     "id": 5,
     "questionBody": "Känner du för att sitta eller stå?",
     "answers": [
-      { "answerBody": "Sitta", "leadsTo": 1001 },
-      { "answerBody": "Stå", "leadsTo": 1002 }
+      { "answerBody": "Sitta", "leadsTo": 7 },
+      { "answerBody": "Stå", "leadsTo": 6 }
+    ]
+  },
+
+  {
+    "id": 6,
+    "questionBody": "Kan du stå?",
+    "answers": [
+      { "answerBody": "Ja", "leadsTo": 7 },
+      { "answerBody": "Nej", "leadsTo": 999 }
+    ]
+  },
+
+  {
+    "id": 7,
+    "questionBody": "Vill du köra en dryckeslek?",
+    "answers": [
+      { "answerBody": "Ja", "leadsTo": 9 },
+      { "answerBody": "Nej", "leadsTo": 8 }
+    ]
+  },
+
+  {
+    "id": 8,
+    "questionBody": "Ta 5 klunkar och sluta va tråkig.",
+    "answers": [
+      { "answerBody": "Tack!", "leadsTo": 7 }
+    ]
+  },
+
+  {
+    "id": 9,
+    "questionBody": "Vill du använda en kortlek?",
+    "answers": [
+      { "answerBody": "Ja", "leadsTo": 999 },
+      { "answerBody": "Nej", "leadsTo": 10 }
+    ]
+  },
+  
+  {
+    "id": 10,
+    "questionBody": "Vill du använda tärningar?",
+    "answers": [
+      { "answerBody": "Ja", "leadsTo": 999 },
+      { "answerBody": "Nej", "leadsTo": 11 }
+    ]
+  },
+
+  {
+    "id": 11,
+    "questionBody": "Vill du tvinga folk att berätta sina djupaste hemligheter?",
+    "answers": [
+      { "answerBody": "Ja", "leadsTo": 999 },
+      { "answerBody": "Nej", "leadsTo": 12 }
+    ]
+  },
+
+  {
+    "id": 12,
+    "questionBody": "Kan ni vara högljudda?",
+    "answers": [
+      { "answerBody": "Ja", "leadsTo": 1003 },
+      { "answerBody": "Nej", "leadsTo": 13 }
+    ]
+  },
+
+  {
+    "id": 13,
+    "questionBody": "Något som leder till en publek utan kort och tärningar?",
+    "answers": [
+      { "answerBody": "", "leadsTo": 999 },
+      { "answerBody": "", "leadsTo": 999 }
     ]
   },
 
@@ -54,5 +125,32 @@
     "id": 1002,
     "questionBody": "Gå hem!",
     "answers": []
+  },
+
+  {
+    "id": 1003,
+    "questionBody": "Spela Chimi chimi",
+    "answers": [
+      { "answerBody": "Chimi chimi", "leadsTo": 0 },
+      { "answerBody": "Materiel: * En kortlek (inget krav på komplett) ** * Ett glas alt. en flaska ** ^ * Blanda kortleken och dra ut korten med ansiktet nedåt i en OBRUTEN cirkel runt glaset. Varje spelare fyller sedan på glaset med en klunk av sin egen dryck, detta glas kallas kungen. Om en flaska används ska den inte fyllas på. ** * Spelarna väljer en person som börjar att dra ett kort från cirkeln, endast ETT finger får användas och om cirkeln bryts dricker spelaren upp sin dryck. ** * Spelaren som dragit kortet visar direkt upp det för resten av spelarna och utför alla regler som associeras till kortet som dragits. Om en flaska används ska kortet nu staplas på toppen av den, välter kortet ned från flaskan dricker spelaren upp sin dryck. ** * Repetera klockvis tills korten är slut eller spelarna obegripliga. ** ^^ \nReglerna för specifika kort är ofta hett debaterade, följande är förslag på vad korten kan betyda.", "leadsTo": 0 }
+    ]
+  },
+
+  {
+    "id": 1004,
+    "questionBody": "Spela Grodan",
+    "answers": [
+      { "answerBody": "Ring of Fire", "leadsTo": 0 },
+      { "answerBody": "Materiel: * En kortlek (inget krav på komplett) ** * Ett glas alt. en flaska ** ^ * Blanda kortleken och dra ut korten med ansiktet nedåt i en OBRUTEN cirkel runt glaset. Varje spelare fyller sedan på glaset med en klunk av sin egen dryck, detta glas kallas kungen. Om en flaska används ska den inte fyllas på. ** * Spelarna väljer en person som börjar att dra ett kort från cirkeln, endast ETT finger får användas och om cirkeln bryts dricker spelaren upp sin dryck. ** * Spelaren som dragit kortet visar direkt upp det för resten av spelarna och utför alla regler som associeras till kortet som dragits. Om en flaska används ska kortet nu staplas på toppen av den, välter kortet ned från flaskan dricker spelaren upp sin dryck. ** * Repetera klockvis tills korten är slut eller spelarna obegripliga. ** ^^ \nReglerna för specifika kort är ofta hett debaterade, följande är förslag på vad korten kan betyda.", "leadsTo": 0 }
+    ]
+  },
+
+  {
+    "id": 1005,
+    "questionBody": "Spela Vikingen",
+    "answers": [
+      { "answerBody": "Ring of Fire", "leadsTo": 0 },
+      { "answerBody": "Materiel: * En kortlek (inget krav på komplett) ** * Ett glas alt. en flaska ** ^ * Blanda kortleken och dra ut korten med ansiktet nedåt i en OBRUTEN cirkel runt glaset. Varje spelare fyller sedan på glaset med en klunk av sin egen dryck, detta glas kallas kungen. Om en flaska används ska den inte fyllas på. ** * Spelarna väljer en person som börjar att dra ett kort från cirkeln, endast ETT finger får användas och om cirkeln bryts dricker spelaren upp sin dryck. ** * Spelaren som dragit kortet visar direkt upp det för resten av spelarna och utför alla regler som associeras till kortet som dragits. Om en flaska används ska kortet nu staplas på toppen av den, välter kortet ned från flaskan dricker spelaren upp sin dryck. ** * Repetera klockvis tills korten är slut eller spelarna obegripliga. ** ^^ \nReglerna för specifika kort är ofta hett debaterade, följande är förslag på vad korten kan betyda.", "leadsTo": 0 }
+    ]
   }
 ]

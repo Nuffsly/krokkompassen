@@ -11,6 +11,13 @@ In reality it is a way to present flowchart-esque questions from a json file in 
 
 If you want to copy this, change it and then host it go ahead. Just don't monetize it you scrooge.
 
+## questions.json MD commands
+\* *content* \*\* - Will make content display as a bulletpoint.
+
+^ \* *content* \*\* ^^ - Will make content display as an element in a numbered list.
+
+\n - Inserts a newline.
+
 ## Angular auto generated instructions
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
